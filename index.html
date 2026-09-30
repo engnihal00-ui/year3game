@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Break It Down – Code It! (Year 3, Session 2)</title>
+<style>
+:root{--bg:#f2f7ff;--card:#fff;--ink:#1b2a41;--p:#2e7df6;--ev:#f5b400;--mo:#3b82f6;--lo:#9b5de5;--co:#f08a24;--ok:#22a45d;--no:#e03131}
+@media(prefers-color-scheme:dark){:root{--bg:#14213d;--card:#22345c;--ink:#f4f7ff}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Trebuchet MS",system-ui,sans-serif;font-size:20px;line-height:1.45}
+header{background:var(--p);color:#fff;padding:14px 22px}header h1{margin:0;font-size:32px}header p{margin:2px 0 0;font-size:17px}
+nav{display:flex;flex-wrap:wrap;gap:8px;padding:12px 22px;position:sticky;top:0;background:var(--bg);z-index:5}
+nav button{font:inherit;font-weight:700;border:0;border-radius:14px;padding:10px 16px;background:var(--card);color:var(--ink);cursor:pointer;box-shadow:0 2px 0 rgba(0,0,0,.2)}
+nav button.on{background:var(--p);color:#fff}
+main{max-width:1100px;margin:0 auto;padding:0 22px 40px}
+section{display:none}section.on{display:block}
+h2{font-size:30px;margin:.3em 0}
+.card{background:var(--card);border-radius:18px;padding:14px 20px;margin:12px 0;box-shadow:0 2px 6px rgba(0,0,0,.12)}
+table{width:100%;border-collapse:collapse}td,th{border-bottom:2px solid rgba(128,128,128,.3);padding:8px;text-align:left;vertical-align:top}th{font-size:17px}
+.blk{display:inline-block;color:#fff;font-weight:700;border-radius:10px;padding:2px 12px;margin:2px 0}
+.ev{background:var(--ev);color:#222}.mo{background:var(--mo)}.lo{background:var(--lo)}.co{background:var(--co)}
+.step{display:flex;gap:16px;align-items:center;font-size:32px;padding:10px 16px}
+.step .n{flex:none;width:60px;height:60px;border-radius:50%;background:var(--p);color:#fff;font-weight:700;display:grid;place-items:center;font-size:32px}
+.step .i{font-size:44px}
+.strip{display:grid;grid-template-columns:repeat(7,1fr);gap:8px}.strip div{border:3px dashed var(--p);border-radius:12px;min-height:110px;padding:6px;font-weight:700;position:relative;background:var(--card)}
+.strip div::after{content:"➜";position:absolute;right:-14px;top:40%;color:var(--p)}.strip div:last-child::after{content:""}
+.bug{border-left:10px solid var(--no)}.fix{border-left:10px solid var(--ok)}
+.tl{display:flex;gap:10px;justify-content:center;font-size:28px}.tl span{width:70px;height:70px;border-radius:50%;display:grid;place-items:center}
+ul{margin:.3em 0 .3em 1.2em;padding:0}li{margin:4px 0}
+label{display:block;font-size:24px;margin:8px 0}input[type=checkbox]{width:26px;height:26px;vertical-align:middle}
+.small{font-size:17px;opacity:.85}
+@media print{nav,header p{display:none}section{display:block!important}}
+</style></head><body>
+<header><h1>🐱 Break It Down – Code It!</h1><p>Year 3 · Cambridge Primary Computing · Session 2 · PictoBlox · 3CT.01 · 3CT.04 · 3CT.05 · 3CT.06 · 3P.09</p></header>
+<nav id="nav"></nav>
+<main>
+
+<section data-t="⏱ Timeline">
+<h2>Timeline: 27–47 min</h2>
+<div class="card"><table>
+<tr><th>Time</th><th>What happens</th><th>Teacher does</th></tr>
+<tr><td>27–29</td><td><b>Set up.</b> Open PictoBlox, Block coding, choose a sprite, save project.</td><td>Show the board steps 1–3. Check every pair has a sprite.</td></tr>
+<tr><td>29–33</td><td><b>Plan.</b> Fill the planning strip with 6 steps for the sprite journey.</td><td>Model the worked example. Ask "What are the smaller steps?"</td></tr>
+<tr><td>33–39</td><td><b>Build.</b> Snap blocks together to match the plan.</td><td>Circulate. Ask "Why does this block come next?"</td></tr>
+<tr><td>39–41</td><td><b>Run and check.</b> Click the green flag. Tick each planned step.</td><td>Ask pairs to point to the block for each step.</td></tr>
+<tr><td>41–45</td><td><b>Debug.</b> Open the bug script. Find and fix the bug.</td><td>Give the bug script. Only give hints, not answers.</td></tr>
+<tr><td>45–47</td><td><b>Fast debug check.</b> Swap screens or explain one fix to a partner.</td><td>Listen for: "The bug was in step ___ because…"</td></tr>
+<tr><td>47–50</td><td><b>Plenary.</b> "What comes next?", exit line, traffic lights.</td><td>See the Check tab.</td></tr></table>
+<p class="small">Short of time? Skip the second bug, and let pairs use the ready-made worked example plan.</p></div>
+</section>
+
+<section data-t="📺 Board steps">
+<h2>Student steps (show on the board)</h2>
+<div class="card step"><span class="n">1</span><span class="i">🖥️</span> Open PictoBlox. Choose <b>Block coding</b>.</div>
+<div class="card step"><span class="n">2</span><span class="i">🐱</span> Pick one <b>sprite</b>.</div>
+<div class="card step"><span class="n">3</span><span class="i">💾</span> Save. Name: <b>Class-Names-Journey</b>.</div>
+<div class="card step"><span class="n">4</span><span class="i">📝</span> Plan <b>6 steps</b> on your strip.</div>
+<div class="card step"><span class="n">5</span><span class="i">🟡</span> Add <span class="blk ev">when green flag clicked</span></div>
+<div class="card step"><span class="n">6</span><span class="i">🔵</span> Add <span class="blk mo">move (100) steps</span></div>
+<div class="card step"><span class="n">7</span><span class="i">↪️</span> Add <span class="blk mo">turn ↻ (90) degrees</span></div>
+<div class="card step"><span class="n">8</span><span class="i">🔵</span> Add <span class="blk mo">move (100) steps</span> again.</div>
+<div class="card step"><span class="n">9</span><span class="i">💬</span> Add <span class="blk lo">say [I made it!] for (2) seconds</span></div>
+<div class="card step"><span class="n">10</span><span class="i">🛑</span> Add <span class="blk co">stop all</span></div>
+<div class="card step"><span class="n">11</span><span class="i">▶️</span> Click the <b>green flag</b>. ✅ Check it!</div>
+<div class="card step"><span class="n">12</span><span class="i">🐞</span> Bug challenge: find it. Fix it.</div>
+<div class="card"><b>Check it:</b> Did your sprite follow your plan? Are your blocks in the same order as your steps?<br>
+<span class="small">Colour code: <span class="blk ev">Events</span> <span class="blk mo">Motion</span> <span class="blk lo">Looks</span> <span class="blk co">Control</span></span></div>
+</section>
+
+<section data-t="📝 Planning strip">
+<h2>Break It Down planning strip</h2>
+<p>Big task: <b>Sprite goes to the flag and says "I made it!"</b> Write or draw one small step in each box.</p>
+<div class="strip"><div>1<br>Start</div><div>2<br>Move</div><div>3<br>Turn</div><div>4<br>Move</div><div>5<br>Say message</div><div>6<br>Stop</div><div>7<br>(extra)</div></div>
+<div class="card"><b>Teacher worked example</b><br>
+1. Start when the green flag is clicked. 2. Move forward 100. 3. Turn right 90. 4. Move forward 100. 5. Say "I made it!" 6. Stop.<br>
+<span class="small">Say aloud: "Decomposition = breaking a big problem into smaller, easier steps. My algorithm must be clear, ordered and complete."</span></div>
+</section>
+
+<section data-t="🐞 Debug">
+<h2>Debug challenge</h2>
+<div class="card bug"><b>Bug 1: Missing step</b><br>
+<span class="blk ev">when green flag clicked</span><br><span class="blk mo">move (100) steps</span><br><span class="blk mo">move (100) steps</span><br><span class="blk lo">say [I made it!] for (2) seconds</span><br><span class="blk co">stop all</span><br>
+<b>Problem:</b> the sprite does not turn. <br><b>Fix:</b> add <span class="blk mo">turn ↻ (90) degrees</span> between the two moves.</div>
+<div class="card bug"><b>Bug 2: Wrong order</b><br>
+<span class="blk ev">when green flag clicked</span><br><span class="blk lo">say [I made it!] for (2) seconds</span><br><span class="blk mo">move (100) steps</span><br><span class="blk mo">turn ↻ (90) degrees</span><br><span class="blk mo">move (100) steps</span><br><span class="blk co">stop all</span><br>
+<b>Problem:</b> the sprite says "I made it!" before it gets there. <br><b>Fix:</b> move the say block to just before stop all.</div>
+<div class="card bug"><b>Extension Bug 3 (fast finishers): Two bugs</b><br>
+<span class="blk mo">move (100) steps</span><br><span class="blk mo">turn ↻ (90) degrees</span><br><span class="blk lo">say [I made it!] for (2) seconds</span><br><span class="blk mo">move (100) steps</span><br><span class="blk co">stop all</span><br>
+<b>Problems:</b> no green flag block, and the say block is too early. <br><b>Fix:</b> add <span class="blk ev">when green flag clicked</span> on top. Move say to the end.</div>
+<div class="card"><b>Sentence starters:</b> "The bug is in step ___ because…" · "I fixed it by…" · "The corrected order works because…"<br>
+<b>Process:</b> 1) Run it. 2) What is wrong? 3) Which step is missing or in the wrong place? 4) Fix it. 5) Run it again.</div>
+</section>
+
+<section data-t="👩‍🏫 Teacher guide">
+<h2>Teacher guide</h2>
+<div class="card"><b>Questions while circulating</b><ol>
+<li>What are the smaller steps?</li><li>Why does this block come next?</li><li>What would happen if we swapped these two steps?</li>
+<li>Which block matches step 3 on your plan?</li><li>Is your algorithm complete? What is missing?</li>
+<li>How do you know your steps are in the right order?</li><li>What did your partner find that you did not?</li>
+<li>How did you find the bug?</li><li>Why does the corrected order work?</li><li>Could a robot follow your steps exactly?</li></ol></div>
+<div class="card"><b>Look for:</b> a clear start, ordered steps, no missing step, blocks that match the plan.</div>
+<div class="card"><b>Common mistakes and quick fixes</b><table>
+<tr><th>Mistake</th><th>Quick fix</th></tr>
+<tr><td>Blocks not snapped together</td><td>Drag one block near another until it clicks.</td></tr>
+<tr><td>No green flag hat block</td><td>Add the Events block on top.</td></tr>
+<tr><td>Sprite turns the wrong way</td><td>Try ↺ instead, or change the number.</td></tr>
+<tr><td>Too many actions in one block</td><td>Split into smaller blocks. Match one block to one step.</td></tr>
+<tr><td>Sprite moves too fast to see</td><td>Add <span class="blk co">wait (1) seconds</span> between steps.</td></tr></table></div>
+<div class="card"><b>Troubleshooting:</b> Sprite off the Stage → click the sprite, go to x: 0 y: 0. Project will not run → click the green flag on the Stage, not the script area. Script will not start → check the hat block is on top. Sprite lost → click "Sprites" list to select it.</div>
+<div class="card"><b>Safety:</b> Save with the agreed class name. No personal information in project names or messages.</div>
+</section>
+
+<section data-t="🌈 Support and Extension">
+<h2>Differentiation</h2>
+<div class="card"><b>🤝 Support</b><ul><li>Picture sequence of the journey.</li><li>Pre-selected sprite.</li><li>Partially built script (green flag + first move), learners add the rest.</li><li>Small set of action blocks only: move, turn, say, stop.</li><li>Rehearse the steps aloud before coding. Work with a supportive partner.</li></ul></div>
+<div class="card"><b>🚀 Extension (Gifted and Talented)</b><ul><li>Create a longer journey of 7–10 ordered steps.</li><li>Add one deliberate bug. Challenge a partner to find and fix it.</li><li>Explain why the corrected order works.</li></ul></div>
+</section>
+
+<section data-t="✅ Check">
+<h2>Assessment and plenary</h2>
+<div class="card"><b>My checklist</b>
+<label><input type="checkbox"> I broke the task into small steps.</label>
+<label><input type="checkbox"> My steps are in order.</label>
+<label><input type="checkbox"> My blocks match my plan.</label>
+<label><input type="checkbox"> I found and fixed a bug.</label></div>
+<div class="card"><b>What comes next?</b> (teacher says part of the algorithm)
+<ul><li>"Start, move, turn, move, … what comes next?" <span class="small">(say a message)</span></li>
+<li>"When green flag clicked, move 100, turn 90, … what comes next?" <span class="small">(move again)</span></li></ul>
+<b>Exit line:</b> "Decomposition helps me because…"</div>
+<div class="card"><b>Traffic-light confidence</b><div class="tl"><span style="background:#e03131">😟</span><span style="background:#f5b400">😐</span><span style="background:#22a45d">😀</span></div>
+<p class="small" style="text-align:center">Red: I need help · Amber: I can do it with a hint · Green: I can explain it to others</p></div>
+</section>
+</main>
+<script>
+const S=[...document.querySelectorAll('section')],N=document.getElementById('nav');
+S.forEach((s,i)=>{const b=document.createElement('button');b.textContent=s.dataset.t;b.onclick=()=>go(i);N.appendChild(b)});
+function go(i){S.forEach((s,j)=>{s.classList.toggle('on',i==j);N.children[j].classList.toggle('on',i==j)});scrollTo(0,0)}
+go(0);
+</script></body></html>
